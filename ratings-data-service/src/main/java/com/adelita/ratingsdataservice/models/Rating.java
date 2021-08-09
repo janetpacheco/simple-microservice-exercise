@@ -1,4 +1,4 @@
-package com.adelita.ratingsdataservice.resources.models;
+package com.adelita.ratingsdataservice.models;
 
 public class Rating {
 	
