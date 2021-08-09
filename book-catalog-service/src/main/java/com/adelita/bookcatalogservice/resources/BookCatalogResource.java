@@ -35,7 +35,7 @@ public class BookCatalogResource {
 		//Put them all together
 		return ratingsList.stream().map(rating-> 
 		{
-			Book book = restTemplate.getForObject("http://localhost:8082/movies/"+rating.getBookId(),Book.class);
+			Book book = restTemplate.getForObject("http://localhost:8082/books/"+ rating.getBookId(),Book.class);
 			return new CatalogItem(book.getName(),"Description", rating.getRating());
 			
 		}).collect(Collectors.toList());
