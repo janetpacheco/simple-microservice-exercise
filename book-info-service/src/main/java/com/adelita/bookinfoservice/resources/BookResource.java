@@ -12,7 +12,7 @@ import com.adelita.bookinfoservice.models.Book;
 public class BookResource {
 	@RequestMapping("/{bookId}")
 	public	Book getBookInfo(@PathVariable("bookId") String bookId) {		
-		return new Book(bookId,"Name for Id"+bookId);
+		return new Book(bookId,"Name for Id: "+bookId);
 		
 	 }
 
