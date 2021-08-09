@@ -5,6 +5,9 @@ public class Book {
 	private String bookId;
 	private String name;
 	
+	public Book() {
+		
+	}
 	
 	public Book(String bookId, String name) {
 		this.bookId = bookId;
