@@ -23,14 +23,14 @@ public class BookCatalogResource {
 	@RequestMapping("/{userId}")
 	public List<CatalogItem> getCatalog(@PathVariable("userId") String userId){				
 			
-		UserRating ratingsList = restTemplate.getForObject("http://localhost:8083/ratingsdata/users/" + userId,	UserRating.class);
+		UserRating ratingsList = restTemplate.getForObject("http://ratings-data-service/ratingsdata/users/" + userId,	UserRating.class);
 					
 		//Put them all together
 		return ratingsList.getUserRatings().stream().map(rating-> 
 		{
 			//Using restTemplate
 			//For each book ID, call book info service and get details
-			Book book = restTemplate.getForObject("http://localhost:8082/books/"+ rating.getBookId(),Book.class);
+			Book book = restTemplate.getForObject("http://book-info-service/books/"+ rating.getBookId(),Book.class);
 			
 			//put them all together
 			return new CatalogItem(book.getName(),"Description", rating.getRating());
