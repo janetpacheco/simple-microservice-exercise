@@ -17,10 +17,4 @@ public class BookCatalogServiceApplication {
 	public RestTemplate getRestTemplate() {
 		return new RestTemplate();
 	}
-	
-	@Bean
-	public WebClient.Builder getWebCBuilder(){
-		return WebClient.builder();
-	}
-
 }

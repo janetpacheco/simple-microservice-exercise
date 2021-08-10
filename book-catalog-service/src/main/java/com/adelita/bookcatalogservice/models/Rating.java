@@ -5,7 +5,11 @@ public class Rating {
 	private String bookId;
 	private int rating;
 	
-	
+	public Rating() {
+		
+	}
+
+
 	public Rating(String bookId, int rating) {
 		this.bookId = bookId;
 		this.rating = rating;
